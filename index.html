@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paradise Construction</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <style>
+      /* CSS rules for small screens */
+      @media only screen and (max-width: 600px) {
+        body {
+          background-color: lightblue;
+          background-image: url("https://lh3.googleusercontent.com/pw/ADCreHfCChYKPoUjZxMalzWDuPAKIGFJfd3DbKnpmYFQmlqI-695BtDjR-33_NZ4uOY2elaMOI0Zq_Y-o5tcRKu8-sqKFdnejDjFGw8DRbUD1uv2XIyzslRT=w600-h315-p-k");
+        }
+      }
+
+      /* CSS rules for medium screens */
+      @media only screen and (min-width: 601px) and (max-width: 1024px) {
+        body {
+          background-color: lightgreen;
+          background-image: url("https://lh3.googleusercontent.com/pw/ADCreHfCChYKPoUjZxMalzWDuPAKIGFJfd3DbKnpmYFQmlqI-695BtDjR-33_NZ4uOY2elaMOI0Zq_Y-o5tcRKu8-sqKFdnejDjFGw8DRbUD1uv2XIyzslRT=w600-h315-p-k");
+        }
+      }
+
+      /* CSS rules for large screens */
+      @media only screen and (min-width: 1025px) {
+        body {
+          background-color: lightyellow;
+          background-image: url("https://lh3.googleusercontent.com/pw/ADCreHfCChYKPoUjZxMalzWDuPAKIGFJfd3DbKnpmYFQmlqI-695BtDjR-33_NZ4uOY2elaMOI0Zq_Y-o5tcRKu8-sqKFdnejDjFGw8DRbUD1uv2XIyzslRT=w600-h315-p-k");
+        }
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        background-color: rgb(207, 207, 230);
+        background-image: url("https://lh3.googleusercontent.com/pw/ADCreHfCChYKPoUjZxMalzWDuPAKIGFJfd3DbKnpmYFQmlqI-695BtDjR-33_NZ4uOY2elaMOI0Zq_Y-o5tcRKu8-sqKFdnejDjFGw8DRbUD1uv2XIyzslRT=w600-h315-p-k");
+      }
+
+      header {
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+      }
+
+      section {
+        padding: 40px;
+        background-color: white;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 20px;
+        /* text color */
+        color: #04ebfc;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        font-size: 32px;
+        color: rgb(138, 43, 226); /* Change the heading color */
+      }
+
+      h2 {
+        font-size: 24px;
+        color: rgb(75, 0, 130); /* Change the heading color */
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        font-size: 20px;
+        color: rgb(0, 0, 128); /* Change the heading color */
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: rgb(100, 100, 100); /* Change the paragraph color */
+        margin-bottom: 10px;
+      }
+
+      .image-overlay {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .image-overlay::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      .image-overlay img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s;
+      }
+
+      .image-overlay:hover img {
+        transform: scale(1.1); /* Add a hover effect to the images */
+      }
+
+      .contact-form {
+        text-align: center;
+      }
+
+      .contact-form form {
+        display: inline-block;
+        text-align: left;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid rgb(207, 207, 207);
+        background-color: rgb(243, 243, 243);
+        font-size: 16px;
+        color: rgb(100, 100, 100);
+      }
+      .contact-form textarea {
+        height: 100px;
+      }
+
+      .contact-form button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(138, 43, 226);
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .contact-form button:hover {
+        background-color: rgb(106, 37, 187); /* Change the button hover color */
+      }
+
+      nav ul li a.active {
+        color: rgb(138, 43, 226);
+      }
+
+      .project-image {
+        width: 150px; /* Adjust the width as per your requirement */
+        height: 100px; /* Adjust the height as per your requirement */
+        object-fit: cover;
+      }
+
+      .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 50%;
+      }
+
+      .logo img {
+        max-width: 50%;
+        height: auto;
+      }
+
+      .logo-container {
+        position: fixed;
+        top: 0;
+        left: 50;
+        transform: translateX(-50);
+        z-index: 200;
+        background-color: #ffffff;
+        padding: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      header.scrolled {
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+      }
+
+      .navigation {
+        /* ... */
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: top 0.3s, left 0.3s;
+        z-index: 200;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 0 20px; /* Adjust the padding as needed */
+      }
+
+      header.scrolled .navigation {
+        top: 0;
+        left: 0;
+      }
+
+      .navigation ul {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .navigation ul li {
+        margin: 0 15px;
+        position: relative;
+      }
+
+      .navigation ul li a {
+        text-decoration: none;
+        color: #03ffea;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .navigation ul li a:hover {
+        color: #6b3bbb;
+      }
+
+      .navigation ul li::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        bottom: -5px;
+        left: 0;
+        background-color: #6b3bbb;
+        transition: all 0.3s ease;
+      }
+
+      .navigation ul li a:hover::before {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img
+            src="https://lh3.googleusercontent.com/pw/ADCreHchSNEaHO7GA-ycLvWb4JMyMrqNOl9-J2W0MaJ6SFHXAJqJ9f6oLsvm5fMYQI5O27l7_ax6CQ6hHOGv1SI8sHyyw-FXD7d5nZLgSFS4XSxHtfDgWTkz=w2400?source=screenshot.guru"
+            alt="Paradise Construction"
+          />
+        </div>
+
+        <nav class="navigation">
+          <ul>
+            <li><a href="#hero-section">Home</a></li>
+            <li><a href="#about-section">About</a></li>
+            <li><a href="#projects-section">Projects</a></li>
+            <li><a href="#contact-section">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        var logo = document.querySelector(".logo");
+        var headerContainer = document.querySelector(".header-container");
+        var navigation = document.querySelector(".navigation");
+
+        if (window.scrollY > logo.offsetHeight) {
+          headerContainer.classList.add("scrolled");
+          navigation.style.top = "0";
+        } else {
+          headerContainer.classList.remove("scrolled");
+          navigation.style.top = logo.offsetHeight + "px"; // Adjust this value to your needs
+        }
+      });
+
+      window.addEventListener("scroll", function () {
+        var logo = document.querySelector(".logo");
+        var headerContainer = document.querySelector(".header-container");
+        var navigation = document.querySelector(".navigation");
+
+        if (window.scrollY > logo.offsetHeight) {
+          headerContainer.classList.add("scrolled");
+          navigation.style.top = "0";
+        } else {
+          headerContainer.classList.remove("scrolled");
+          navigation.style.top = logo.offsetHeight + "px"; // Adjust this value to your needs
+        }
+      });
+    </script>
+    <section id="hero-section">
+      <h1>Welcome to Paradise Construction</h1>
+      <p>Your trusted partner in creating exceptional spaces.</p>
+    </section>
+
+    <section id="about-section">
+      <h2>About Us</h2>
+      <p>
+        Paradise Construction is a renowned construction company committed to
+        delivering high-quality construction services. With years of experience
+        and a team of skilled professionals, we bring your visions to life.
+      </p>
+      <p>
+        Our expertise includes residential, commercial, and industrial
+        construction projects. We prioritize client satisfaction and adhere to
+        strict quality standards to ensure every project is completed to
+        perfection.
+      </p>
+    </section>
+
+    <section id="projects-section">
+      <h2>Our Projects</h2>
+      <div class="project-container">
+        <div class="project">
+          <div class="image-overlay">
+            <img
+              src="https://c4.wallpaperflare.com/wallpaper/846/173/87/5c1cbaf96bcec-wallpaper-preview.jpg"
+              alt="Project 1"
+              class="project-image"
+              data-project-index="0"
+            />
+          </div>
+          <h3>Residential Building</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac
+            enim non massa varius hendrerit quis ut diam.
+          </p>
+        </div>
+        <div class="project">
+          <div class="image-overlay">
+            <img
+              src="https://media.istockphoto.com/id/1196323722/photo/business-district-building-street-office-building.jpg?s=612x612&w=0&k=20&c=TDf7W7Y0sLwrbzGKaeKYOmCRoNRTnSk_-7DNU5T9678="
+              alt="Project 2"
+              class="project-image"
+              data-project-index="1"
+            />
+          </div>
+          <h3>Commercial Complex</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac
+            enim non massa varius hendrerit quis ut diam.
+          </p>
+        </div>
+        <div class="project">
+          <div class="image-overlay">
+            <img
+              src="https://img.freepik.com/premium-photo/contemporary-warehouses-exterior-with-modest-office-space_410516-206.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1698278400&semt=ais"
+              alt="Project 3"
+              class="project-image"
+              data-project-index="2"
+            />
+          </div>
+          <h3>Industrial Facility</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac
+            enim non massa varius hendrerit quis ut diam.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const projectImages = document.querySelectorAll(".project-image");
+
+      projectImages.forEach((image) => {
+        let currentIndex = 0;
+        const imageSources = [
+          [
+            "https://c4.wallpaperflare.com/wallpaper/846/173/87/5c1cbaf96bcec-wallpaper-preview.jpg",
+            "https://wallpapercosmos.com/w/full/8/5/d/1162319-3840x2160-desktop-4k-mansion-wallpaper-photo.jpg",
+            "https://img.gumtree.co.za/api/v1/za-pt10-ads/images/2f/2f86dd85-c26e-483e-8f97-ddfe98c7da28?rule=s-I85.auto",
+            "https://media.istockphoto.com/id/494358329/photo/modern-house-under-blue-sky.webp?b=1&s=170667a&w=0&k=20&c=Wm895S9cjAAzNCep6dZLLGwcyBRmN4F5lNjkb5b6gBY=",
+          ],
+          [
+            "https://media.istockphoto.com/id/1196323722/photo/business-district-building-street-office-building.jpg?s=612x612&w=0&k=20&c=TDf7W7Y0sLwrbzGKaeKYOmCRoNRTnSk_-7DNU5T9678=",
+            "https://c4.wallpaperflare.com/wallpaper/193/755/586/3d-modern-commercial-buildings-wallpaper-preview.jpg",
+            "https://mir-s3-cdn-cf.behance.net/project_modules/disp/278a397746755.560b0f01bf94e.jpg",
+            "https://d31l02nbp0owar.cloudfront.net/m/s/10771/10761974/a-0181.jpg",
+          ],
+          [
+            "https://img.freepik.com/premium-photo/contemporary-warehouses-exterior-with-modest-office-space_410516-206.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1698278400&semt=ais",
+            "https://img.freepik.com/premium-photo/exterior-view-modern-industrial-building_1112-2860.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1698278400&semt=ais",
+            "https://media.istockphoto.com/id/457796927/photo/warehouse-building.jpg?s=612x612&w=0&k=20&c=7B89_PjoILSAGcoq7XZYkQsLfXRMOzDlxQlcbyVcWDw=",
+            "https://media.istockphoto.com/id/1311165951/photo/car-service-for-trucks-and-cars-large-garage-for-car-maintenance-repair-diagnostics.jpg?s=612x612&w=0&k=20&c=KAYBs0Nwa_t7FbsMD0xCl1WdhdTcglFiReVm5RSIYLc=",
+          ],
+        ];
+
+        setInterval(() => {
+          currentIndex =
+            (currentIndex + 1) %
+            imageSources[image.dataset.projectIndex].length;
+          image.src = imageSources[image.dataset.projectIndex][currentIndex];
+        }, 3000);
+      });
+    </script>
+    <section id="contact-section">
+      <h2>Contact Us</h2>
+      <div class="contact-form">
+        <form onsubmit="return validateForm()">
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter Your Name"
+            required
+          /><br />
+          <input
+            type="tel"
+            id="mobile"
+            placeholder="Enter Your Mobile Number"
+            required
+          /><br />
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter Your Email"
+            required
+          /><br />
+          <textarea
+            id="message"
+            cols="25"
+            rows="5"
+            placeholder="Enter Your Enquiry"
+            required
+          ></textarea><br />
+          <input type="submit" value="Send Enquiry" /><br />
+        </form>
+      </div>
+    </section>
+    
+    <script>
+      function validateForm() {
+        var name = document.getElementById("name").value;
+        var mobile = document.getElementById("mobile").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+    
+        var mobilePattern = /^0\d{9}$/;
+    
+        if (!mobile.match(mobilePattern)) {
+          alert("Please enter a 10-digit number starting with 0.");
+          return false;
+        }
+    
+        if (name.trim() === "" || email.trim() === "" || message.trim() === "") {
+          alert("Please fill in all the required information.");
+          return false;
+        }
+    
+        var whatsappLink =
+          "https://api.whatsapp.com/send?phone=+27642152212&text=" +
+          "Name: " +
+          encodeURIComponent(name) +
+          "%0A" +
+          "Mobile: " +
+          encodeURIComponent(mobile) +
+          "%0A" +
+          "Email: " +
+          encodeURIComponent(email) +
+          "%0A" +
+          "Message: " +
+          encodeURIComponent(message);
+    
+        window.open(whatsappLink);
+    
+        return true;
+      }
+    </script>
+
+    <footer>
+      <p>&copy; 2023 Paradise Construction. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Add smooth scrolling for navigation links
+      const navLinks = document.querySelectorAll("nav ul li a");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const targetId = link.getAttribute("href");
+          const targetSection = document.querySelector(targetId);
+
+          // Scroll to the target section
+          targetSection.scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+
