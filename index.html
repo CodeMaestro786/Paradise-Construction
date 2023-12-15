@@ -235,6 +235,7 @@
   background-color: #000000; /* Optionally, add background color for the box */
 }
 
+/* Media query for screens smaller than 768px */
 @media (max-width: 767px) {
   .navigation {
     flex-direction: column; /* Stack the navigation items vertically */
@@ -244,6 +245,20 @@
   
   .navigation ul li {
     margin-bottom: 10px; /* Add spacing between navigation items */
+  }
+  
+  .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px; /* Adjust the padding as needed */
+    border-top: 2px solid #0099ff; /* Add a border to separate contact section */
+  }
+  
+  .contact a {
+    margin-top: 10px; /* Add spacing between contact links */
   }
 }
 
