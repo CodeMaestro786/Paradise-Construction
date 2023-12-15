@@ -40,7 +40,7 @@
         flex-direction: column;
         min-height: 100vh;
         margin: 0;
-        background-color: rgb(207, 207, 230);
+        background-color: rgb(0, 0, 0);
         background-image: url("https://lh3.googleusercontent.com/pw/ADCreHfCChYKPoUjZxMalzWDuPAKIGFJfd3DbKnpmYFQmlqI-695BtDjR-33_NZ4uOY2elaMOI0Zq_Y-o5tcRKu8-sqKFdnejDjFGw8DRbUD1uv2XIyzslRT=w600-h315-p-k");
       }
 
@@ -48,17 +48,17 @@
         top: 0;
         left: 0;
         width: 100%;
-        background-color: #ffffff;
+        background-color: #000000;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         z-index: 100;
       }
 
       section {
         padding: 40px;
-        background-color: white;
+        background-color: rgb(0, 0, 0);
         border-radius: 10px;
         margin-bottom: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 6px rgba(104, 104, 104, 0.1);
       }
 
       footer {
@@ -68,7 +68,7 @@
 
         padding: 20px;
         /* text color */
-        color: #04ebfc;
+        color: #080808;
       }
 
       h1,
@@ -81,25 +81,25 @@
 
       h1 {
         font-size: 32px;
-        color: rgb(138, 43, 226); /* Change the heading color */
+        color: #0099ff; /* Change the heading color */
       }
 
       h2 {
         font-size: 24px;
-        color: rgb(75, 0, 130); /* Change the heading color */
+        color: #0099ff; /* Change the heading color */
         margin-bottom: 10px;
       }
 
       h3 {
         font-size: 20px;
-        color: rgb(0, 0, 128); /* Change the heading color */
+        color: #0099ff; /* Change the heading color */
         margin-bottom: 5px;
       }
 
       p {
         font-size: 16px;
         line-height: 1.5;
-        color: rgb(100, 100, 100); /* Change the paragraph color */
+        color: rgb(255, 255, 255); /* Change the paragraph color */
         margin-bottom: 10px;
       }
 
@@ -150,7 +150,7 @@
         border: 1px solid rgb(207, 207, 207);
         background-color: rgb(243, 243, 243);
         font-size: 16px;
-        color: rgb(100, 100, 100);
+        color: rgb(0, 0, 0);
       }
       .contact-form textarea {
         height: 100px;
@@ -161,22 +161,22 @@
         border-radius: 5px;
         border: none;
         background-color: rgb(138, 43, 226);
-        color: white;
+        color: rgb(235, 235, 235);
         font-weight: bold;
         cursor: pointer;
         transition: background-color 0.3s;
       }
 
       .contact-form button:hover {
-        background-color: rgb(106, 37, 187); /* Change the button hover color */
+        background-color: rgb(0, 0, 0); /* Change the button hover color */
       }
 
       nav ul li a.active {
-        color: rgb(138, 43, 226);
+        color: #0099ff;
       }
 
       .project-image {
-        width: 150px; /* Adjust the width as per your requirement */
+        width: 90px; /* Adjust the width as per your requirement */
         height: 100px; /* Adjust the height as per your requirement */
         object-fit: cover;
       }
@@ -186,12 +186,14 @@
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        max-width: 50%;
+        max-width: 75%;
+        color: #0099ff;
       }
 
       .logo img {
-        max-width: 50%;
-        height: auto;
+        max-width: 100%;
+        height: 100%;
+        color: #0099ff;
       }
 
       .logo-container {
@@ -214,21 +216,24 @@
       }
 
       .navigation {
-        /* ... */
-        position: fixed;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        transition: top 0.3s, left 0.3s;
-        z-index: 200;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        padding: 0 20px; /* Adjust the padding as needed */
-      }
+  /* ... */
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 0.3s, left 0.3s;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px; /* Adjust the padding as needed */
+  border: 2px solid #0099ff; /* Add a border to create the box */
+  border-radius: 5px; /* Optionally, add border radius for rounded corners */
+  background-color: #000000; /* Optionally, add background color for the box */
+}
 
       header.scrolled .navigation {
         top: 0;
@@ -250,7 +255,7 @@
 
       .navigation ul li a {
         text-decoration: none;
-        color: #03ffea;
+        color: #fffafa;
         font-weight: bold;
         text-transform: uppercase;
         padding: 10px;
@@ -258,7 +263,7 @@
       }
 
       .navigation ul li a:hover {
-        color: #6b3bbb;
+        color: #0099ff;
       }
 
       .navigation ul li::before {
@@ -281,7 +286,7 @@
     <header>
       <div class="header-container">
         <div class="logo">
-          <img
+          <img width="100%" height="100%"
             src="https://lh3.googleusercontent.com/pw/ADCreHchSNEaHO7GA-ycLvWb4JMyMrqNOl9-J2W0MaJ6SFHXAJqJ9f6oLsvm5fMYQI5O27l7_ax6CQ6hHOGv1SI8sHyyw-FXD7d5nZLgSFS4XSxHtfDgWTkz=w2400?source=screenshot.guru"
             alt="Paradise Construction"
           />
